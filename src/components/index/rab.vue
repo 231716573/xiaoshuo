@@ -1,0 +1,24 @@
+<template>
+  <div class="index">
+    <div class="head" ref="header">
+    	
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: '',
+  data () {
+    return {
+      msg: '1111111111'
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="stylus" rel="stylesheet/stylus">
+@import "~common/stylus/variable"
+
+</style>
