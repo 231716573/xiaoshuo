@@ -2,6 +2,7 @@
   <transition name="slide">
     <div class="article">
       <div class="back"><p></p>百年修得同船渡</div>
+      <hr class="for-newArt">
       <div class="book-info">
         <div class="book-thumb">
           <img src="https://bookcover.yuewen.com/qdbimg/349573/1010964303/300">
@@ -36,10 +37,54 @@
         <h3>作品简介</h3>
         <div class="detail">婚后的林嘉歌，没多久就被时瑶逐出家门了，他为了回家，用尽所有的方法都没能成功，最后将目光小包子听完林嘉歌的提议，和他勾了勾手指，软萌萌的回小包子收到机器人的当晚，把时瑶骗到餐厅，偷小包子收到奥特曼的当晚，把时瑶骗到游泳馆，偷偷对林嘉歌说：“爹地，妈咪陪小包子收到小火车的当晚，把时瑶骗到酒店套房，给了林嘉歌一把避孕套，偷偷的凑到林嘉歌耳边说：“爹地，妈咪给你睡。”</div>
       </div>
+      <hr class="for-newArt">
       <div class="comment">
-        <h3>书评区(381人评论)</h3>
-        
+        <h3>书评区<span class="com-num">(381人评论)</span></h3>
+        <ul class="list">
+          <li class="item">
+            <div class="thumb">
+              <img src="https://facepic.qidian.com/qd_face/349573/5725170/50">
+            </div>
+            <div class="detail">
+              <p class="title">我与成分1111</p>
+              <p class="content">我去你打野的垃圾文章，我去你打野的垃圾文章，我去你打野的垃圾文章</p>
+              <p class="time">10分钟前</p>
+            </div>
+          </li>
+          <li class="item">
+            <div class="thumb">
+              <img src="https://facepic.qidian.com/qd_face/349573/5725170/50">
+            </div>
+            <div class="detail">
+              <p class="title">我与成分2222</p>
+              <p class="content">我去你打野的垃圾文章，我去你打野的垃圾文章，我去你打野的垃圾文章</p>
+              <p class="time">10分钟前</p>
+            </div>
+          </li>
+          <li class="item">
+            <div class="thumb">
+              <img src="https://facepic.qidian.com/qd_face/349573/5725170/50">
+            </div>
+            <div class="detail">
+              <p class="title">我与成分3333</p>
+              <p class="content">我去你打野的垃圾文章，我去你打野的垃圾文章，我去你打野的垃圾文章</p>
+              <p class="time">10分钟前</p>
+            </div>
+          </li>
+          <li class="item">
+            <div class="thumb">
+              <img src="https://facepic.qidian.com/qd_face/349573/5725170/50">
+            </div>
+            <div class="detail">
+              <p class="title">我与成分4444</p>
+              <p class="content">我去你打野的垃圾文章，我去你打野的垃圾文章，我去你打野的垃圾文章</p>
+              <p class="time">10分钟前</p>
+            </div>
+          </li>
+        </ul>
       </div>
+      <div class="more-com">更多评论</div>
+      <p class="crevice"></p>
     </div>
   </transition>
 </template>
@@ -81,7 +126,7 @@ export default {
   .book-info
     display: flex
     width: 100%
-    padding: 0.2rem
+    padding:0 0.2rem 0.2rem
     box-sizing: border-box
     .book-thumb
       flex: 0 0 2rem
@@ -161,6 +206,47 @@ export default {
     height: 1px
     border: none
     background-color: #eee
+  .more-com
+    height: 0.8rem
+    line-height: 0.8rem
+    border-top: 1px solid #eee
+    border-bottom: 1px solid #eee
+    text-align: center
+    color: #22bc99
+  .comment
+    .list 
+      margin-top: 0.3rem
+      .item
+        border-bottom: 1px solid #eee
+        margin-bottom: 0.2rem
+        &:last-child
+          border: none
+        .detail
+          margin-left: 1.2rem
+          p
+            &.title
+              font-size: 14px
+              font-weight: 700
+            &.content
+              font-size: 13px
+              color: #666
+            &.time
+              font-size: 12px
+              color: #999
+        .thumb
+          float: left
+          width: 1rem
+          height: 1rem
+          overflow: hidden
+          img
+            width: 100%
+            height: auto
+            border-radius: 50%
+            box-shadow: 0 0 1px rgba(0,0,0,.1)
+  .com-num
+    font-size: 14px
+    color: #999
+    margin-left: 5px
   .description, .comment
     padding-top: 3px
     margin: 0 0.2rem
@@ -181,8 +267,8 @@ export default {
       height: 0.32rem
       margin-right: 5px
     .detail
-      margin: 0.3rem 0
-      line-height: 1.7
+      margin: 0.1rem 0
+      line-height: 2
   .back 
     float: left
     width: 100%
