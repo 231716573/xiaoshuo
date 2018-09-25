@@ -59,7 +59,7 @@ export function GetString(name){
   if(r!=null)return  unescape(r[2]); return null;
 }
 
-// 获取时间
+// 获取时间---格式：formatDate(new Date(), 'yyyy-MM-dd hh:mm:ss')
 export function formatDate(date, fmt) {
 	if (/(y+)/.test(fmt)) {
 		fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));

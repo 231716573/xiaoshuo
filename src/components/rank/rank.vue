@@ -1,12 +1,17 @@
 <template>
   <div class="rank">
+    <div class="toplist_tit">
+      本月榜，截止至：{{nowTime}}
+    </div>
     <div class="ranklist-wrap">
       <ul>
-        <li class="ranklist-item">
-          <a href="javascript:;" class="ranklist-media">   
+        <router-link tag="li" 
+                     :to="{path: '/rank/type', query: {id: 123}}" 
+                     class="ranklist-item">
+          <div class="ranklist-media">   
             <img src="https://y.gtimg.cn/music/common/upload/iphone_order_channel/toplist_4_300_217255676.jpg?max_age=2592000">
             <span class="ranklist-count"><i class="icon icon_listen"></i>1930.0万</span>
-          </a>
+          </div>
           <div class="ranklist_info">
             <div class="ranklist_cont">
               <h3 class="ranklist_tit">推荐·流行指数</h3>
@@ -16,7 +21,7 @@
             </div>
             <i class="ranklist_arrow"></i>
           </div>
-        </li>
+        </router-link>
 
         <li class="ranklist-item">
           <a href="javascript:;" class="ranklist-media">   
@@ -83,16 +88,42 @@
         </li>
       </ul>
     </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import {formatDate} from 'common/js/dom.js'
+
 export default {
   name: '',
   data () {
     return {
-      msg: ''
+      msg: '',
+      nowTime: ''
     }
+  },
+  mounted() {
+    this.clock();
+  },
+  methods: {
+    clock() {
+      setInterval(() => {
+        var cd = new Date();
+
+        this.nowTime = formatDate(cd,'yyyy-MM-dd hh:mm:ss');
+      }, 1000)
+    },
+    zeroPadding(num, digit) {
+      var zero = '';
+      for(var i = 0; i < digit; i++) {
+          zero += '0';
+      }
+      return (zero + num).slice(-digit);
+    }
+  },
+  computed: {
+    
   }
 }
 </script>
@@ -103,6 +134,14 @@ export default {
 
 .rank
   background-color: #f4f4f4
+  .toplist_tit
+    background: #f2f2f2
+    padding: 0.2rem 0.16rem 0.2rem 0.12rem
+    font-size: $font-size-14
+    line-height: $font-size-14
+    border-bottom: 0.02rem solid #dfdfdf
+    background-color: #333
+    color: #fff
   .ranklist-wrap
     padding: 10px
     .ranklist-item

@@ -11,6 +11,8 @@ import myComment from 'components/my-comment/my-comment'
 import myCollection from 'components/my-collection/my-collection'
 import myWallet from 'components/my-wallet/my-wallet'
 import Helper from 'components/helper/helper'
+import Ranktype from 'components/rank-type/rank-type'
+import Article from 'components/article/article'
 
 Vue.use(Router)
 
@@ -31,7 +33,23 @@ const router = new Router({
     },
     {
       path: '/rank',
-      component: Rank
+      component: Rank,
+      meta: {
+      	title: '热门小说排行榜'
+      },
+      children: [
+      	{
+      		path: 'type',
+      		component: Ranktype
+      	}
+      ]
+    },
+    {
+    	path: '/article/:id',
+    	component: Article,
+    	meta: {
+    		title: '文章详情'
+    	}
     },
     {
       path: '/mine',
@@ -98,7 +116,7 @@ router.beforeEach((to, from, next) => {
   if (to.meta.title) {//如果设置标题，拦截后设置标题
     document.title = to.meta.title
   } else {
-    document.title = '小说网'
+    document.title = '测试内容'
   }
   next()
 })
