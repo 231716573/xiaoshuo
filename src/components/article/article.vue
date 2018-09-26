@@ -1,7 +1,7 @@
 <template>
   <transition name="slide">
     <div class="article">
-      <div class="back"><p></p>百年修得同船渡</div>
+      <div class="back" @click="back()"><p></p>百年修得同船渡</div>
       <hr class="for-newArt">
       <div class="book-info">
         <div class="book-thumb">
@@ -83,20 +83,166 @@
           </li>
         </ul>
       </div>
-      <div class="more-com">更多评论</div>
+      <div class="more-com" @click="seeCommont()">更多评论</div>
       <p class="crevice"></p>
+      <div class="like">
+        <h3>实时推荐</h3>
+        <ul class="like-ceil">
+          <li class="item">
+            <div class="thumb">
+              <img src="https://bookcover.yuewen.com/qdbimg/349573/1010964303/300">
+            </div>
+            <div class="detail">
+              <p class="title">我与成分4444</p>
+              <p class="content">作者：<span>南派三个数</span></p>
+              <p class="time">类型：<span>武侠小说</span></p>
+              <p class="num">123456名读者阅读过此书</p>
+            </div>
+          </li>
+          <li class="item">
+            <div class="thumb">
+              <img src="https://bookcover.yuewen.com/qdbimg/349573/1010964303/300">
+            </div>
+            <div class="detail">
+              <p class="title">我与成分4444</p>
+              <p class="content">作者：<span>南派三个数</span></p>
+              <p class="time">类型：<span>武侠小说</span></p>
+              <p class="num">123456名读者阅读过此书</p>
+            </div>
+          </li>
+          <li class="item">
+            <div class="thumb">
+              <img src="https://bookcover.yuewen.com/qdbimg/349573/1010964303/300">
+            </div>
+            <div class="detail">
+              <p class="title">我与成分4444</p>
+              <p class="content">作者：<span>南派三个数</span></p>
+              <p class="time">类型：<span>武侠小说</span></p>
+              <p class="num">123456名读者阅读过此书</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="commonlist" ref="commonlist">
+        <div class="close-commont" @click="closeCommont()"><p></p>关闭评论</div>
+        <div class="write-commont" ref="writeCommont" @click="seeOwnCommont()">发表评论</div>
+        <ul class="list">
+          <li class="item">
+            <div class="thumb">
+              <img src="https://facepic.qidian.com/qd_face/349573/5725170/50">
+            </div>
+            <div class="detail">
+              <p class="title">我与成分1111</p>
+              <p class="content">我去你打野的垃圾文章，我去你打野的垃圾文章，我去你打野的垃圾文章</p>
+              <p class="time">10分钟前</p>
+            </div>
+          </li>
+          <li class="item">
+            <div class="thumb">
+              <img src="https://facepic.qidian.com/qd_face/349573/5725170/50">
+            </div>
+            <div class="detail">
+              <p class="title">我与成分2222</p>
+              <p class="content">我去你打野的垃圾文章，我去你打野的垃圾文章，我去你打野的垃圾文章</p>
+              <p class="time">10分钟前</p>
+            </div>
+          </li>
+          <li class="item">
+            <div class="thumb">
+              <img src="https://facepic.qidian.com/qd_face/349573/5725170/50">
+            </div>
+            <div class="detail">
+              <p class="title">我与成分3333</p>
+              <p class="content">我去你打野的垃圾文章，我去你打野的垃圾文章，我去你打野的垃圾文章</p>
+              <p class="time">10分钟前</p>
+            </div>
+          </li>
+          <li class="item">
+            <div class="thumb">
+              <img src="https://facepic.qidian.com/qd_face/349573/5725170/50">
+            </div>
+            <div class="detail">
+              <p class="title">我与成分4444</p>
+              <p class="content">我去你打野的垃圾文章，我去你打野的垃圾文章，我去你打野的垃圾文章</p>
+              <p class="time">10分钟前</p>
+            </div>
+          </li>
+          <li class="item">
+            <div class="thumb">
+              <img src="https://facepic.qidian.com/qd_face/349573/5725170/50">
+            </div>
+            <div class="detail">
+              <p class="title">我与成分2222</p>
+              <p class="content">我去你打野的垃圾文章，我去你打野的垃圾文章，我去你打野的垃圾文章</p>
+              <p class="time">10分钟前</p>
+            </div>
+          </li>
+          <li class="item">
+            <div class="thumb">
+              <img src="https://facepic.qidian.com/qd_face/349573/5725170/50">
+            </div>
+            <div class="detail">
+              <p class="title">我与成分3333</p>
+              <p class="content">我去你打野的垃圾文章，我去你打野的垃圾文章，我去你打野的垃圾文章</p>
+              <p class="time">10分钟前</p>
+            </div>
+          </li>
+          <li class="item">
+            <div class="thumb">
+              <img src="https://facepic.qidian.com/qd_face/349573/5725170/50">
+            </div>
+            <div class="detail">
+              <p class="title">我与成分4444</p>
+              <p class="content">我去你打野的垃圾文章，我去你打野的垃圾文章，我去你打野的垃圾文章</p>
+              <p class="time">10分钟前</p>
+            </div>
+          </li>
+        </ul>
+        <div class="load-more-com" @click="loadCommont()">{{loadCom}}</div>
+      </div>
+      <div class="common-own" ref="ownCommon">
+        <div class="close-commont" @click="closeOwnCommont()"><p></p>返回书评</div>
+        <div class="write-commont">发表</div>
+        <div class="write-title">
+          <input type="text" placeholder="请输入评分（仅允许0-5）" onkeyup="this.value=this.value.replace(/^[^0-5]$/g,'') " onafterpaste="this.value=this.value.replace(/^[0-5]$/g,'')" maxlength="1">分
+        </div>
+        <div class="write-content">
+          <textarea placeholder="谈谈对本书的看法..."></textarea>
+        </div>
+      </div>
     </div>
   </transition>
 </template>
 
 <script>
 import Star from 'base/star/star'
+import {hasClass, removeClass, addClass} from 'common/js/dom.js'
 
 export default {
   name: '',
   data () {
     return {
-      artId: ''
+      artId: '',
+      loadCom: '加载更多'
+    }
+  },
+  methods: {
+    back() {
+      this.$router.back()
+    },
+    // 查看评论
+    seeCommont() {
+      addClass(this.$refs.commonlist, 'animation');
+    },
+    closeCommont() {
+      removeClass(this.$refs.commonlist, 'animation');
+    },
+    // 发表评论
+    seeOwnCommont() {
+      addClass(this.$refs.ownCommon, 'own-commont-animation');
+    },
+    closeOwnCommont() {
+      removeClass(this.$refs.ownCommon, 'own-commont-animation');
     }
   },
   mounted() {
@@ -114,6 +260,116 @@ export default {
 <style scoped lang="stylus" rel="stylesheet/stylus">
 @import "~common/stylus/variable"
 
+.commonlist, .common-own
+  position: fixed
+  z-index: 10001
+  top: 100%
+  left: 0
+  width: 100%
+  height: 100%
+  overflow-y: auto
+  overflow-x: hidden
+  background-color: #fff
+  .write-content
+    padding: 0.2rem
+    width: 100%
+    height: 8rem
+    box-sizing: border-box
+    textarea
+      width: 100%
+      height: 100%
+      box-sizing: border-box
+      border: none
+  .write-title
+    height: 1rem
+    line-height: 1rem
+    width: 100%
+    padding: 0 0.2rem
+    box-sizing: border-box
+    border-bottom: 1px solid #eee
+    input
+      width: 4rem
+      height: 0.8rem
+      line-height: 0.8rem
+  .load-more-com
+    height: 0.8rem
+    line-height: 0.8rem
+    border-top: 1px solid #eee
+    border-bottom: 1px solid #eee
+    text-align: center
+    color: #22bc99
+  .list 
+    margin-top: 0.3rem
+    line-height: 2;
+    .item
+      padding: 0 0.2rem 0.2rem
+      box-sizing: border-box
+      border-bottom: 1px solid #eee
+      margin-bottom: 0.2rem
+      &:last-child
+        border: none
+      .detail
+        margin-left: 1.2rem
+        p
+          &.title
+            font-size: 14px
+            font-weight: 700
+          &.content
+            font-size: 13px
+            color: #666
+          &.time
+            font-size: 12px
+            color: #999
+      .thumb
+        float: left
+        width: 1rem
+        height: 1rem
+        overflow: hidden
+        img
+          width: 100%
+          height: auto
+          border-radius: 50%
+          box-shadow: 0 0 1px rgba(0,0,0,.1)
+  .write-commont
+    position: absolute
+    z-index: 10010
+    top: 0
+    right: 0
+    height: 0.8rem
+    line-height: 0.8rem
+    overflow-y: auto
+    background-color: #fff
+    padding: 0 0.2rem
+    color: #22bc99
+  .close-commont
+    width: 100%
+    height: 0.8rem
+    line-height: 0.8rem
+    padding:0 0.2rem
+    color: #666
+    font-size $font-size-14
+    border-bottom: 1px solid #eee
+    p
+      vertical-align: middle
+      display:inline-block
+      position: relative
+      text-align: center
+      width: 0.4rem
+      height: 0.4rem
+      margin-right: 0.1rem
+      &:after
+        position: absolute
+        display: inline-block
+        top: 50%
+        left: 50%
+        margin-top: -5px
+        margin-left: -5px
+        content: ''
+        width: 10px
+        height: 10px
+        border-top: 1px solid #33373d
+        border-left: 1px solid #33373d
+        transform: rotate(-45deg)
 .article
   position: fixed
   z-index: 10000
@@ -123,6 +379,7 @@ export default {
   height: 100%
   background-color: #fff
   overflow-y: auto
+  overflow-x: hidden
   .book-info
     display: flex
     width: 100%
@@ -247,7 +504,7 @@ export default {
     font-size: 14px
     color: #999
     margin-left: 5px
-  .description, .comment
+  .description, .comment, .like
     padding-top: 3px
     margin: 0 0.2rem
     box-sizing: border-box
@@ -269,6 +526,38 @@ export default {
     .detail
       margin: 0.1rem 0
       line-height: 2
+  .like
+    margin-top: 0.2rem
+    .like-ceil
+      margin: 0.2rem 0 0.4rem
+      .item 
+        margin-bottom: 0.4rem
+        clear: both
+        .detail
+          p
+            color: #999
+            &.title
+              font-size: 16px
+              font-weight: 700
+              color: #333
+            &.num
+              display: inline-block
+              padding: 0 5px
+              border: 1px solid #ccc
+              background-color: #f2f2f2
+              border-radius: 3px
+              color: #4c4c4c
+            span
+              color: #4c4c4c
+        .thumb
+          float: left
+          width: 1.8rem
+          height: 1.8rem
+          margin-right: 0.2rem
+          img
+            width: 100%
+            height: auto
+            box-shadow: 0 0 1px rgba(0,0,0,.1)
   .back 
     float: left
     width: 100%
@@ -298,6 +587,22 @@ export default {
         border-top: 1px solid #33373d
         border-left: 1px solid #33373d
         transform: rotate(-45deg)
+
+// 打开发表评论
+.own-commont-animation
+  animation:ownCommontAnimation 0.5s
+  top: 0
+@keyframes ownCommontAnimation
+  0%   { left:0; top:100%; }
+  100% { left:0; top:0; }
+// 打开评论
+.animation
+  animation:commonlist 0.5s
+  top: 0
+@keyframes commonlist
+  0%   { left:0; top:100%; }
+  100% { left:0; top:0; }
+
 .slide-enter-active, .slide-leave-active
   transition: all 0.3s
 

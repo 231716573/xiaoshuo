@@ -40,7 +40,6 @@ q:before, q:after
 table
   border-collapse: collapse
   border-spacing: 0
-
 /* custom */
 
 a
@@ -60,6 +59,13 @@ i
 
 select, option, input,textarea:focus 
   outline: none;
+a,button,input,textarea,select
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-user-modify:read-write-plaintext-only; 
+  
+input,textarea, select
+  -webkit-appearance: none;
+  appearance: none;
 
 .crevice 
   width: 100%
