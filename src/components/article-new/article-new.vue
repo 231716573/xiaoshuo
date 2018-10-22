@@ -2,6 +2,7 @@
   <transition name="slide">
     <div class="article">
       <back title="发表新内容"></back>
+      <button class="submit-art" @click="submitArt(this)" :disabled="isDisabled">发表</button>
       <div class="wrapper">
         <h2 class="title">标题：<input placeholder="请输入标题" /></h2>
         <div class="type">类别：<input placeholder="请输入类别" /></div>
@@ -28,6 +29,7 @@ export default {
   name: '',
   data () {
     return {
+      isDisabled: false,
       word: 0,
       content: '',
       editorOption: {
@@ -47,6 +49,10 @@ export default {
   methods: {
     back() {
       this.$router.back()
+    },
+    submitArt(obj) {
+      this.isDisabled = true;
+      console.log('submitArt')
     },
     onEditorFocus(){//获得焦点事件
     },
@@ -87,6 +93,18 @@ export default {
   height: 100%
   background-color: #fff
   overflow-y: auto
+  .submit-art
+    position: fixed
+    z-index: 10001
+    top: 0
+    right: 0
+    width: 1rem
+    height: 46px
+    line-height: 46px
+    text-align: center
+    background-color: #22bc99
+    color: #fff
+    border: none
   .wrapper
     .title,.type
       font-size: 15px
