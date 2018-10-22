@@ -5,9 +5,16 @@ import VueLazyLoad from 'vue-lazyload'
 import fastclick from 'fastclick'
 import axios from 'axios'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueQuillEditor from 'vue-quill-editor'
+
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
 
 
 Vue.use(VueAwesomeSwiper)
+Vue.use(VueQuillEditor)
+
 import 'common/stylus/index.styl'
 fastclick.attach(document.body)
 

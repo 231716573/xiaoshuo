@@ -13,6 +13,7 @@ import myWallet from 'components/my-wallet/my-wallet'
 import Helper from 'components/helper/helper'
 import Ranktype from 'components/rank-type/rank-type'
 import Article from 'components/article/article'
+import ArticleNew from 'components/article-new/article-new'
 
 Vue.use(Router)
 
@@ -43,6 +44,13 @@ const router = new Router({
       		component: Ranktype
       	}
       ]
+    },
+    {
+      path: '/article/new',
+      component: ArticleNew,
+      meta: {
+        title: '发表新文章'
+      }
     },
     {
     	path: '/article/:id',

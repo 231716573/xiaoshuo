@@ -3,7 +3,7 @@
     <!-- 顶部搜索 -->
     <div class="head" ref="header">
       <div class="right">
-        <i class="write"></i> 
+        <router-link tag="i" to="/article/new" class="write"></router-link>
         <i class="mine"></i> 
       </div>
     	<div class="logo">
@@ -193,6 +193,7 @@
       </ul>
     </div>
     <p class="clear"></p>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -298,6 +299,9 @@ export default {
         }
       }
 
+    },
+    wirteAct() {
+      this.$router.push({ path: '/article/new' });
     }
   },
   components: {

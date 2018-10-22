@@ -10,7 +10,7 @@
       </div>
       <div class="nick_ul">
         <ul>
-          <li class="floatl"><em></em><span>丸子<br><i>1368</i></span></li>
+          <li class="floatl"><em></em><span>文章<br><i>1368</i></span></li>
           <li class="floatl"><em></em><span>经验值<br><i>1368</i></span></li>
           <li class="floatl"><span>账户余额(元)<br><i>0</i></span></li>
         </ul>
