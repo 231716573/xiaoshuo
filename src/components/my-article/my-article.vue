@@ -2,7 +2,7 @@
   <transition name="slide">
     <div class="wallet">
       <router-link to="/article/new" class="write"><i></i>发表新文章</router-link>
-      <back title="我的文章"></back>
+      <back title="个人文章"></back>
       <nodata ref="nodata"></nodata>
       <div class="list-wrap">
         <ul>
