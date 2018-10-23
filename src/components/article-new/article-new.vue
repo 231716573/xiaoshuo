@@ -1,11 +1,11 @@
 <template>
   <transition name="slide">
     <div class="article">
-      <back title="发表新内容"></back>
+      <back title="发表新文章"></back>
       <button class="submit-art" @click="submitArt(this)" :disabled="isDisabled">发表</button>
       <div class="wrapper">
         <h2 class="title">标题：<input placeholder="请输入标题" /></h2>
-        <div class="type">类别：<input placeholder="请输入类别" /></div>
+        <div class="type">类别：<div class="select-type"><select><option>请选择类别</option></select></div></div>
         <div class="content">
           <div class="num"><span>字数：{{word}}</span>内容：</div>
           <quill-editor ref="myTextEditor" 
@@ -40,7 +40,8 @@ export default {
             [{ 'size': ['small', false, 'large', 'huge'] }],
             [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
             [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-            [{ 'color': [] }, { 'background': [] }]
+            [{ 'color': [] }, { 'background': [] }],
+            ['image'],
           ]
         }
       }
@@ -112,9 +113,36 @@ export default {
       line-height: 0.88rem
       padding:0 0.2rem
       border-bottom: 1px solid #ddd
+      color: #777
       input 
         height: 100%
         width: 6rem
+        color: #333
+      .select-type
+        height: 60%
+        line-height: 60%
+        width: 3rem
+        position: relative  
+        display: inline-block
+        color: #333
+        select
+          width: 100%
+          height: 100%
+          border-radius: 3px
+          padding-left: 3px
+        &:before
+          content: ''
+          display: inline-block
+          position: absolute
+          right: 0.2rem
+          top: 50%
+          margin-top: -0.16rem
+          width: 0.16rem
+          height: 0.16rem
+          border-left: 1px solid #555
+          border-bottom: 1px solid #555
+
+          transform: rotate(-45deg)
     .content
       .num
         margin: 0.2rem 0

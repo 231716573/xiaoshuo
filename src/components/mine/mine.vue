@@ -10,7 +10,7 @@
       </div>
       <div class="nick_ul">
         <ul>
-          <li class="floatl"><em></em><span>文章<br><i>1368</i></span></li>
+          <router-link tag="li" to="/mine/myArticle" class="floatl"><em></em><span>文章<br><i>1368</i></span></router-link>
           <li class="floatl"><em></em><span>经验值<br><i>1368</i></span></li>
           <li class="floatl"><span>账户余额(元)<br><i>0</i></span></li>
         </ul>
@@ -191,6 +191,7 @@ export default {
     bottom: 5px
     color: #a2e2e1
     font-size: $font-size-12
+    z-index: 12
     li 
       position: relative
       text-align: center

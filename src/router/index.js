@@ -4,6 +4,7 @@ import Headlines from 'components/headlines/headlines'
 import Cate from 'components/cate/cate'
 import Rank from 'components/rank/rank'
 import Mine from 'components/mine/mine'
+import myArticle from 'components/my-article/my-article'
 import myRead from 'components/my-read/my-read'
 import myProfile from 'components/my-profile/my-profile'
 import myMessage from 'components/my-message/my-message'
@@ -66,6 +67,13 @@ const router = new Router({
       	title: '个人中心'
       },
       children: [
+        {
+          path: 'myArticle',
+          component: myArticle,
+          meta: {
+            title: '我的文章'
+          }
+        },
       	{
       		path: 'myRead',
       		component: myRead,

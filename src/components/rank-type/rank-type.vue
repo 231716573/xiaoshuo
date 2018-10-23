@@ -33,7 +33,7 @@ import Back from 'base/back/back'
 export default {
   data () {
     return {
-      title: this.$route.query.id,
+      title: String(this.$route.query.id),
       list: [
         {id: 1, thumb: 'https://y.gtimg.cn/music/common/upload/iphone_order_channel/toplist_4_300_217255676.jpg?max_age=2592000', title: '我在你妈坟山蹦迪1', author: '东派一叔', type: '都市风情', updateTit: '第一章 蹦迪播放的歌曲', num: '111111', url: '/article/11'},
         {id: 2, thumb: 'https://y.gtimg.cn/music/common/upload/iphone_order_channel/toplist_4_300_217255676.jpg?max_age=2592000', title: '我在你妈坟山蹦迪2', author: '南派二叔', type: '武侠', updateTit: '第二章 蹦迪播放的歌曲', num: '222222', url: '/article/22'},
