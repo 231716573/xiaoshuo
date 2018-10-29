@@ -1,4 +1,4 @@
-# xiaoshuo 106.12.210.232test
+# xiaoshuo ip106.12.210.232
 
 > xiaoshuo.com
 
